@@ -1,9 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
+    <!-- Anti-flash: restore theme before paint -->
+    <script>
+      (function () {
+        var t = localStorage.getItem("portfolio-theme");
+        if (!t)
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmed Hamdi Portfolio</title>
+    <meta
+      name="description"
+      content="Ahmed Hamdi — Full-Stack Developer specializing in MERN stack, React, Node.js, and scalable web applications. Based in Cairo, Egypt. Available for freelance and full-time opportunities."
+    />
+    <title>Ahmed Hamdi | Full-Stack Developer Portfolio</title>
 
     <!-- Favicon -->
 
@@ -27,7 +42,7 @@
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet" /> -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link
       href="assets/vendor/glightbox/css/glightbox.min.css"
       rel="stylesheet"
@@ -98,11 +113,43 @@
       </nav>
 
       <div class="social-links text-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-github"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-stack-overflow"></i></a>
-        <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a
+          href="https://www.linkedin.com/in/ahmed-abd-el-gawad-682450398/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="linkedin"
+          ><i class="bi bi-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/Ahmed02001"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="github"
+          ><i class="bi bi-github"></i
+        ></a>
+        <a
+          href="https://wa.me/+201063597918"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="whatsapp"
+          ><i class="bi bi-whatsapp"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/me/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="facebook"
+          ><i class="bi bi-facebook"></i
+        ></a>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="bi bi-sun toggle-icon icon-sun"></i>
+          <i class="bi bi-moon toggle-icon icon-moon"></i>
+          <div class="toggle-track">
+            <div class="toggle-thumb"></div>
+          </div>
+          <span class="toggle-label">Light Mode</span>
+        </button>
       </div>
     </header>
 
@@ -334,10 +381,10 @@
                     <div class="collaboration-text">
                       <h3>Let's create something amazing together</h3>
                       <p>
-                        👋Whether you're looking to redesign an existing product
-                        or architech a completely new digital solution, I'd love
-                        to explore how my full-stack expertise can bring your
-                        vision to high-performance life.
+                        👋 Whether you're looking to redesign an existing
+                        product or architect a completely new digital solution,
+                        I'd love to explore how my full-stack expertise can
+                        bring your vision to high-performance life.
                       </p>
                     </div>
                   </div>
@@ -923,30 +970,6 @@
                   </div>
 
                   <div
-                    class="education-card"
-                    data-aos="zoom-in"
-                    data-aos-delay="350"
-                  >
-                    <div class="education-header">
-                      <div class="degree-icon">
-                        <i class="bi bi-laptop"></i>
-                      </div>
-                      <div class="degree-info">
-                        <h3>Bachelor of Engineering</h3>
-                        <p class="institution">Kafr El-shiekh University</p>
-                        <span class="graduation-year">2019 - 2025</span>
-                      </div>
-                    </div>
-                    <div class="education-details">
-                      <p>
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur
-                        excepteur sint.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div
                     class="certification-section"
                     data-aos="fade-up"
                     data-aos-delay="400"
@@ -956,29 +979,25 @@
                       <div class="cert-item">
                         <i class="bi bi-patch-check"></i>
                         <div class="cert-details">
-                          <span class="cert-name">Advanced UX Design</span>
+                          <span class="cert-name">Front-End Diploma</span>
+                          <span class="cert-provider">Online • 2023</span>
+                        </div>
+                      </div>
+                      <div class="cert-item">
+                        <i class="bi bi-patch-check"></i>
+                        <div class="cert-details">
+                          <span class="cert-name">Software Foundation</span>
                           <span class="cert-provider"
-                            >Design Academy • 2022</span
+                            >Programming Advices Academy • 2023</span
                           >
                         </div>
                       </div>
                       <div class="cert-item">
                         <i class="bi bi-patch-check"></i>
                         <div class="cert-details">
-                          <span class="cert-name"
-                            >Digital Innovation Strategy</span
-                          >
+                          <span class="cert-name">Full Stack Developer</span>
                           <span class="cert-provider"
-                            >Innovation Institute • 2021</span
-                          >
-                        </div>
-                      </div>
-                      <div class="cert-item">
-                        <i class="bi bi-patch-check"></i>
-                        <div class="cert-details">
-                          <span class="cert-name">Leadership in Design</span>
-                          <span class="cert-provider"
-                            >Leadership Academy • 2020</span
+                            >Digital Egypt Builders Initiative • 2024</span
                           >
                         </div>
                       </div>
@@ -998,10 +1017,9 @@
         <div class="container section-title" data-aos="fade-up">
           <h2>Portfolio</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+            A selection of projects I've built — from low-level C++ systems to
+            full-stack web applications. Each one reflects a commitment to clean
+            code, performance, and thoughtful user experience.
           </p>
         </div>
         <!-- End Section Title -->
@@ -1022,8 +1040,6 @@
                 <li data-filter="*" class="filter-active">All Work</li>
                 <li data-filter=".filter-sw">Software Engineer</li>
                 <li data-filter=".filter-front">Frontend Developer</li>
-                <li data-filter=".filter-photography">Photography</li>
-                <li data-filter=".filter-print">Print Design</li>
               </ul>
             </div>
 
@@ -1054,6 +1070,7 @@
                           class="action-btn details-btn"
                           title="Source Code"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-arrow-up-right"></i
                         ></a>
                       </div>
@@ -1099,6 +1116,7 @@
                           class="action-btn details-btn"
                           title="View Project"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-arrow-up-right"></i
                         ></a>
                       </div>
@@ -1144,6 +1162,7 @@
                           class="action-btn details-btn"
                           title="Source Code"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-arrow-up-right"></i
                         ></a>
                       </div>
@@ -1189,6 +1208,7 @@
                           class="action-btn details-btn"
                           title="Source Code"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-arrow-up-right"></i
                         ></a>
                       </div>
@@ -1228,6 +1248,7 @@
                           class="action-btn preview-btn"
                           title="View Live"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-eye"></i
                         ></a>
                         <a
@@ -1235,6 +1256,7 @@
                           class="action-btn details-btn"
                           title="Source Code"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-arrow-up-right"></i
                         ></a>
                       </div>
@@ -1277,6 +1299,7 @@
                           class="action-btn preview-btn"
                           title="View Live"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-eye"></i
                         ></a>
                         <a
@@ -1284,6 +1307,7 @@
                           class="action-btn details-btn"
                           title="Source Code"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-arrow-up-right"></i
                         ></a>
                       </div>
@@ -1326,6 +1350,7 @@
                           class="action-btn preview-btn"
                           title="View Live"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-eye"></i
                         ></a>
                         <a
@@ -1333,6 +1358,7 @@
                           class="action-btn details-btn"
                           title="Source Code"
                           target="_blank"
+                          rel="noopener noreferrer"
                           ><i class="bi bi-arrow-up-right"></i
                         ></a>
                       </div>
@@ -1357,82 +1383,328 @@
               </div>
               <!-- End Portfolio Item -->
 
-              <div class="col-lg-6 portfolio-item isotope-item filter-print">
+              <!-- Flash Card App -->
+              <div class="col-lg-6 portfolio-item isotope-item filter-front">
                 <div class="portfolio-card">
                   <div class="portfolio-image">
                     <img
-                      src="assets/imgs/portfolio/portfolio-11.webp"
+                      src="assets/imgs/portfolio/frontend5.png"
                       class="img-fluid"
-                      alt="Package Design"
+                      alt="Flash Card App"
                       loading="lazy"
                     />
                     <div class="portfolio-overlay">
                       <div class="portfolio-actions">
                         <a
-                          href="assets/imgs/portfolio/portfolio-11.webp"
-                          class="glightbox action-btn preview-btn"
-                          title="Artisan Collection"
-                          ><i class="bi bi-eye"></i
-                        ></a>
-                        <!-- <a
-                          href="portfolio-details.html"
+                          href="https://flash-card-app-liard.vercel.app"
                           class="action-btn details-btn"
-                          title="View Project"
-                          ><i class="bi bi-arrow-up-right"></i
-                        ></a> -->
+                          title="Live Demo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-link-45deg"></i
+                        ></a>
+                        <a
+                          href="https://github.com/Ahmed02001/flash-card-app"
+                          class="action-btn details-btn"
+                          title="Source Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-github"></i
+                        ></a>
                       </div>
                     </div>
                   </div>
                   <div class="portfolio-content">
                     <div class="portfolio-meta">
-                      <span class="portfolio-category">Package Design</span>
-                      <span class="portfolio-year">2023</span>
+                      <span class="portfolio-category">Frontend Developer</span>
+                      <span class="portfolio-year">2024</span>
                     </div>
-                    <h3 class="portfolio-title">Artisan Collection</h3>
+                    <h3 class="portfolio-title">Flash Card App</h3>
                     <p class="portfolio-description">
-                      Luxury packaging design series celebrating traditional
-                      craftsmanship with contemporary minimalist approach.
+                      A lightweight browser-based flashcard app for learning
+                      vocabulary. Features a flipped flashcard study mode, local
+                      storage persistence, and live search. Built with pure
+                      HTML, CSS, and JavaScript.
                     </p>
                   </div>
                 </div>
               </div>
               <!-- End Portfolio Item -->
 
-              <div class="col-lg-6 portfolio-item isotope-item filter-web">
+              <!-- Islamic Greeting Cards -->
+              <div class="col-lg-6 portfolio-item isotope-item filter-front">
                 <div class="portfolio-card">
                   <div class="portfolio-image">
                     <img
-                      src="assets/imgs/portfolio/portfolio-12.webp"
+                      src="assets/imgs/portfolio/frontend6.png"
                       class="img-fluid"
-                      alt="E-commerce Platform"
+                      alt="Islamic Greeting Cards"
                       loading="lazy"
                     />
                     <div class="portfolio-overlay">
                       <div class="portfolio-actions">
                         <a
-                          href="assets/imgs/portfolio/portfolio-12.webp"
-                          class="glightbox action-btn preview-btn"
-                          title="Sustainable Commerce"
-                          ><i class="bi bi-eye"></i
-                        ></a>
-                        <!-- <a
-                          href="portfolio-details.html"
+                          href="https://islamic-greeting-cards.vercel.app"
                           class="action-btn details-btn"
-                          title="View Project"
-                          ><i class="bi bi-arrow-up-right"></i
-                        ></a> -->
+                          title="Live Demo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-link-45deg"></i
+                        ></a>
+                        <a
+                          href="https://github.com/Ahmed02001/Islamic-greeting-cards"
+                          class="action-btn details-btn"
+                          title="Source Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-github"></i
+                        ></a>
                       </div>
                     </div>
                   </div>
                   <div class="portfolio-content">
                     <div class="portfolio-meta">
-                      <span class="portfolio-category">E-commerce</span>
+                      <span class="portfolio-category">Frontend Developer</span>
                       <span class="portfolio-year">2024</span>
                     </div>
-                    <h3 class="portfolio-title">Sustainable Commerce</h3>
+                    <h3 class="portfolio-title">Islamic Greeting Cards</h3>
                     <p class="portfolio-description">
-                      Eco-conscious e-commerce platform design promoting
-                      sustainable products with seamless shopping experience.
+                      An interactive application that allows users to create,
+                      customize, and download personalized Islamic greeting
+                      cards. Developed using modern JavaScript, CSS3, and HTML5.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+
+              <!-- Velorix -->
+              <div class="col-lg-6 portfolio-item isotope-item filter-front">
+                <div class="portfolio-card">
+                  <div class="portfolio-image">
+                    <img
+                      src="assets/imgs/portfolio/frontend10.png"
+                      class="img-fluid"
+                      alt="Velorix"
+                      loading="lazy"
+                    />
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-actions">
+                        <a
+                          href="https://velorix-2.vercel.app/"
+                          class="action-btn details-btn"
+                          title="Live Demo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-link-45deg"></i
+                        ></a>
+                        <a
+                          href="https://github.com/Ahmed02001/Velorix-"
+                          class="action-btn details-btn"
+                          title="Source Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="portfolio-content">
+                    <div class="portfolio-meta">
+                      <span class="portfolio-category">Frontend Developer</span>
+                      <span class="portfolio-year">2024</span>
+                    </div>
+                    <h3 class="portfolio-title">Velorix</h3>
+                    <p class="portfolio-description">
+                      A modern web application built with a responsive layout.
+                      Features an interactive UI and smooth animations,
+                      providing an excellent user experience across devices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+
+              <!-- VidCall.ai -->
+              <div class="col-lg-6 portfolio-item isotope-item filter-front">
+                <div class="portfolio-card">
+                  <div class="portfolio-image">
+                    <img
+                      src="assets/imgs/portfolio/frontend7.png"
+                      class="img-fluid"
+                      alt="VidCall.ai"
+                      loading="lazy"
+                    />
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-actions">
+                        <a
+                          href="https://vid-call-ai.vercel.app/"
+                          class="action-btn details-btn"
+                          title="Live Demo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-link-45deg"></i
+                        ></a>
+                        <a
+                          href="https://github.com/Ahmed02001/VidCall.ai"
+                          class="action-btn details-btn"
+                          title="Source Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="portfolio-content">
+                    <div class="portfolio-meta">
+                      <span class="portfolio-category"
+                        >Full-Stack Developer</span
+                      >
+                      <span class="portfolio-year">2024</span>
+                    </div>
+                    <h3 class="portfolio-title">VidCall.ai</h3>
+                    <p class="portfolio-description">
+                      An AI-powered video calling application interface built
+                      with modern JavaScript. Designed to offer seamless
+                      communication features with an intuitive design.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+
+              <!-- Nabd News -->
+              <div class="col-lg-6 portfolio-item isotope-item filter-front">
+                <div class="portfolio-card">
+                  <div class="portfolio-image">
+                    <img
+                      src="assets/imgs/portfolio/frontend9.png"
+                      class="img-fluid"
+                      alt="Nabd News"
+                      loading="lazy"
+                    />
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-actions">
+                        <a
+                          href="https://nabd-news-two.vercel.app/"
+                          class="action-btn details-btn"
+                          title="Live Demo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-link-45deg"></i
+                        ></a>
+                        <a
+                          href="https://github.com/Ahmed02001/nabd-news"
+                          class="action-btn details-btn"
+                          title="Source Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="portfolio-content">
+                    <div class="portfolio-meta">
+                      <span class="portfolio-category">Frontend Developer</span>
+                      <span class="portfolio-year">2024</span>
+                    </div>
+                    <h3 class="portfolio-title">Nabd News</h3>
+                    <p class="portfolio-description">
+                      A fast, responsive news aggregator built using Next.js.
+                      Fetches and displays the latest news articles in a clean,
+                      readable format optimized for performance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+
+              <!-- Hotel Management Backend API -->
+              <div class="col-lg-6 portfolio-item isotope-item filter-sw">
+                <div class="portfolio-card">
+                  <div class="portfolio-image">
+                    <img
+                      src="assets/imgs/portfolio/sw1.png"
+                      class="img-fluid"
+                      alt="Hotel Management Backend API"
+                      loading="lazy"
+                    />
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-actions">
+                        <a
+                          href="https://github.com/Ahmed02001/Hotel-Management-Backend-API"
+                          class="action-btn details-btn"
+                          title="Source Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="portfolio-content">
+                    <div class="portfolio-meta">
+                      <span class="portfolio-category">Software Engineer</span>
+                      <span class="portfolio-year">2024</span>
+                    </div>
+                    <h3 class="portfolio-title">
+                      Hotel Management Backend API
+                    </h3>
+                    <p class="portfolio-description">
+                      A robust RESTful API built completely in TypeScript.
+                      Handles complex business logic for hotel bookings, room
+                      management, user authentication, and administrative
+                      controls.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+
+              <!-- Dental Clinic Project -->
+              <div class="col-lg-6 portfolio-item isotope-item filter-front">
+                <div class="portfolio-card">
+                  <div class="portfolio-image">
+                    <img
+                      src="assets/imgs/portfolio/frontend8.png"
+                      class="img-fluid"
+                      alt="Dental Clinic Project"
+                      loading="lazy"
+                    />
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-actions">
+                        <a
+                          href="https://dental-clinic-project-dusky.vercel.app/"
+                          class="action-btn details-btn"
+                          title="Live Demo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-link-45deg"></i
+                        ></a>
+                        <a
+                          href="https://github.com/Ahmed02001/dental-clinic-project"
+                          class="action-btn details-btn"
+                          title="Source Code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="portfolio-content">
+                    <div class="portfolio-meta">
+                      <span class="portfolio-category">Frontend Developer</span>
+                      <span class="portfolio-year">2024</span>
+                    </div>
+                    <h3 class="portfolio-title">Dental Clinic Management</h3>
+                    <p class="portfolio-description">
+                      A modern web application tailored for dental clinics.
+                      Features patient appointment scheduling, service displays,
+                      and an easy-to-navigate interface built with HTML, CSS,
+                      and JS.
                     </p>
                   </div>
                 </div>
@@ -1466,16 +1738,14 @@
                   <i class="fa-brands fa-react"></i>
                 </div>
                 <div class="service-content">
-                  <h3>
-                    <a href="service-details.html">Responsive Frontend</a>
-                  </h3>
+                  <h3>Responsive Frontend</h3>
                   <p>
                     Crafting pixel-perfect, mobile-first interfaces with React
                     and Next.js, focusing on performance, SEO, and
                     accessibility.
                   </p>
-                  <a href="service-details.html" class="read-more">
-                    <span>Learn More</span>
+                  <a href="#contact" class="read-more">
+                    <span>Get In Touch</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -1488,16 +1758,14 @@
                   <i class="bi bi-database-fill-gear"></i>
                 </div>
                 <div class="service-content">
-                  <h3>
-                    <a href="service-details.html">API & Backend Design</a>
-                  </h3>
+                  <h3>API &amp; Backend Design</h3>
                   <p>
                     Designing secure, RESTful APIs and database schemas
                     (SQL/NoSQL) that ensure seamless data flow and high
                     availability.
                   </p>
-                  <a href="service-details.html" class="read-more">
-                    <span>Learn More</span>
+                  <a href="#contact" class="read-more">
+                    <span>Get In Touch</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -1510,16 +1778,14 @@
                   <i class="bi bi-code-slash"></i>
                 </div>
                 <div class="service-content">
-                  <h3>
-                    <a href="service-details.html">Full-Stack Web Developer</a>
-                  </h3>
+                  <h3>Full-Stack Web Developer</h3>
                   <p>
-                    DArchitecting robust applications using the MERN stack. I
+                    Architecting robust applications using the MERN stack. I
                     build scalable backends and dynamic frontends that perform
                     under pressure.
                   </p>
-                  <a href="service-details.html" class="read-more">
-                    <span>Learn More</span>
+                  <a href="#contact" class="read-more">
+                    <span>Get In Touch</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -1532,16 +1798,14 @@
                   <i class="fa-solid fa-chart-diagram"></i>
                 </div>
                 <div class="service-content">
-                  <h3>
-                    <a href="service-details.html">Software Architecture</a>
-                  </h3>
+                  <h3>Software Architecture</h3>
                   <p>
                     Planning scalable system designs and cloud deployments
                     (AWS/Docker) to turn complex requirements into efficient
                     software.
                   </p>
-                  <a href="service-details.html" class="read-more">
-                    <span>Learn More</span>
+                  <a href="#contact" class="read-more">
+                    <span>Get In Touch</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -1551,182 +1815,6 @@
         </div>
       </section>
       <!-- /Services Section -->
-
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="testimonials section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Testimonials</h2>
-          <p>
-            Client success is the ultimate metric of my work. I pride myself on
-            clear communication, meeting deadlines, and delivering code that
-            adds real value to business operations.
-          </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonials-slider swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": 1,
-                "spaceBetween": 30,
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                }
-              }
-            </script>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div
-                  class="testimonial-slide"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <div class="testimonial-header">
-                    <div class="stars-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <div class="quote-icon">
-                      <i class="bi bi-quote"></i>
-                    </div>
-                  </div>
-                  <div class="testimonial-body">
-                    <p>
-                      "Outstanding service quality and innovative solutions have
-                      completely transformed our business processes, resulting
-                      in enhanced productivity and exceptional customer
-                      satisfaction throughout our organization."
-                    </p>
-                  </div>
-                  <div class="testimonial-footer">
-                    <div class="author-info">
-                      <img
-                        src="assets/imgs/person/person-f-12.webp"
-                        alt="Author"
-                        class="author-avatar"
-                      />
-                      <div class="author-details">
-                        <h4>Sophia Martinez</h4>
-                        <span class="role">Operations Director</span>
-                        <span class="company">TechVision Corp</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div
-                  class="testimonial-slide"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <div class="testimonial-header">
-                    <div class="stars-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <div class="quote-icon">
-                      <i class="bi bi-quote"></i>
-                    </div>
-                  </div>
-                  <div class="testimonial-body">
-                    <p>
-                      "Professional expertise and dedicated support have
-                      significantly improved our project delivery timelines
-                      while maintaining exceptional quality standards across all
-                      our initiatives."
-                    </p>
-                  </div>
-                  <div class="testimonial-footer">
-                    <div class="author-info">
-                      <img
-                        src="assets/imgs/person/person-m-14.webp"
-                        alt="Author"
-                        class="author-avatar"
-                      />
-                      <div class="author-details">
-                        <h4>Michael Anderson</h4>
-                        <span class="role">Project Manager</span>
-                        <span class="company">InnovateTech Ltd</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div
-                  class="testimonial-slide"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
-                  <div class="testimonial-header">
-                    <div class="stars-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <div class="quote-icon">
-                      <i class="bi bi-quote"></i>
-                    </div>
-                  </div>
-                  <div class="testimonial-body">
-                    <p>
-                      "Strategic collaboration and innovative thinking have
-                      enabled remarkable digital transformation, leading to
-                      increased efficiency and measurable business growth
-                      results."
-                    </p>
-                  </div>
-                  <div class="testimonial-footer">
-                    <div class="author-info">
-                      <img
-                        src="assets/imgs/person/person-f-11.webp"
-                        alt="Author"
-                        class="author-avatar"
-                      />
-                      <div class="author-details">
-                        <h4>Jennifer Wilson</h4>
-                        <span class="role">Digital Strategy Lead</span>
-                        <span class="company">FutureScope Inc</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-navigation-wrapper">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-next"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Testimonials Section -->
 
       <!-- Contact Section -->
       <section id="contact" class="contact section">
@@ -1798,11 +1886,7 @@
                   <h3>Send us a message</h3>
                 </div>
 
-                <form
-                  action="forms/contact.php"
-                  method="post"
-                  class="php-email-form"
-                >
+                <form id="contactForm">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -1858,15 +1942,38 @@
       <div class="container">
         <h3 class="sitename">Ahmed Hamdi</h3>
         <p>
-          Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni
-          eligendi fuga maxime saepe commodi placeat.
+          Full-Stack Developer building scalable web applications with clean
+          code and a passion for great user experiences.
         </p>
         <div class="social-links d-flex justify-content-center">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-skype"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
+          <a
+            href="https://www.linkedin.com/in/ahmed-abd-el-gawad-682450398/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="linkedin"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/Ahmed02001"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://wa.me/+201063597918"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp"
+            ><i class="bi bi-whatsapp"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
         </div>
         <div class="container">
           <div class="copyright">
@@ -1890,11 +1997,8 @@
     <div id="preloader"></div>
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>

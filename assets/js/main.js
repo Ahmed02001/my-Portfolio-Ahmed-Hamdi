@@ -88,21 +88,25 @@
   new PureCounter();
 
   /**
-   * Animate the skills items on reveal
+   * Animate the skills items on reveal (using IntersectionObserver)
    */
-  let skillsAnimation = document.querySelectorAll(".skills-animation");
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: "80%",
-      handler: function (direction) {
-        let progress = item.querySelectorAll(".progress .progress-bar");
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute("aria-valuenow") + "%";
+  const skillsAnimation = document.querySelectorAll(".skills-animation");
+  if (skillsAnimation.length) {
+    const skillsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll(".progress .progress-bar").forEach((el) => {
+              el.style.width = el.getAttribute("aria-valuenow") + "%";
+            });
+            skillsObserver.unobserve(entry.target);
+          }
         });
       },
-    });
-  });
+      { threshold: 0.2 }
+    );
+    skillsAnimation.forEach((item) => skillsObserver.observe(item));
+  }
 
   /**
    * Initiate glightbox
@@ -217,4 +221,61 @@
   }
   window.addEventListener("load", navmenuScrollspy);
   document.addEventListener("scroll", navmenuScrollspy);
+
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.querySelector('[name="name"]').value;
+      const email = document.querySelector('[name="email"]').value;
+      const subject = document.querySelector('[name="subject"]').value;
+      const message = document.querySelector('[name="message"]').value;
+
+      const mailtoLink = `mailto:ahmedhamdyy787@gmail.com
+    ?subject=${encodeURIComponent(subject)}
+    &body=${encodeURIComponent(
+      "Name: " +
+        name +
+        "\n" +
+        "Email: " +
+        email +
+        "\n\n" +
+        "Message:\n" +
+        message,
+    )}`;
+
+      window.location.href = mailtoLink;
+    });
+  /**
+   * Theme Toggle — Dark / Light
+   */
+  const themeToggleBtn = document.getElementById("themeToggle");
+  const themeLabel = themeToggleBtn ? themeToggleBtn.querySelector(".toggle-label") : null;
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("portfolio-theme", theme);
+    if (themeLabel) {
+      themeLabel.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+    }
+  }
+
+  // On load: restore saved theme preference
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    // Respect OS preference if no saved preference
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(prefersDark ? "dark" : "light");
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+  }
+
 })();
