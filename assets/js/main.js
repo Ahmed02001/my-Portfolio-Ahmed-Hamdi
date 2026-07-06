@@ -96,14 +96,16 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll(".progress .progress-bar").forEach((el) => {
-              el.style.width = el.getAttribute("aria-valuenow") + "%";
-            });
+            entry.target
+              .querySelectorAll(".progress .progress-bar")
+              .forEach((el) => {
+                el.style.width = el.getAttribute("aria-valuenow") + "%";
+              });
             skillsObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     skillsAnimation.forEach((item) => skillsObserver.observe(item));
   }
@@ -232,18 +234,22 @@
       const subject = document.querySelector('[name="subject"]').value;
       const message = document.querySelector('[name="message"]').value;
 
-      const mailtoLink = `mailto:ahmedhamdyy787@gmail.com
-    ?subject=${encodeURIComponent(subject)}
-    &body=${encodeURIComponent(
-      "Name: " +
+      const body =
+        "Name: " +
         name +
         "\n" +
         "Email: " +
         email +
         "\n\n" +
         "Message:\n" +
-        message,
-    )}`;
+        message;
+
+      const mailtoLink =
+        "mailto:ahmedhamdyy787@gmail.com" +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
 
       window.location.href = mailtoLink;
     });
@@ -251,7 +257,9 @@
    * Theme Toggle — Dark / Light
    */
   const themeToggleBtn = document.getElementById("themeToggle");
-  const themeLabel = themeToggleBtn ? themeToggleBtn.querySelector(".toggle-label") : null;
+  const themeLabel = themeToggleBtn
+    ? themeToggleBtn.querySelector(".toggle-label")
+    : null;
 
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
@@ -267,7 +275,9 @@
     applyTheme(savedTheme);
   } else {
     // Respect OS preference if no saved preference
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     applyTheme(prefersDark ? "dark" : "light");
   }
 
@@ -277,5 +287,4 @@
       applyTheme(current === "dark" ? "light" : "dark");
     });
   }
-
 })();
