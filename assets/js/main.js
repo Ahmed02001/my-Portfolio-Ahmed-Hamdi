@@ -245,7 +245,7 @@
         message;
 
       const mailtoLink =
-        "mailto:ahmedhamdyy787@gmail.com" +
+        "mailto:ahmed.hamdi.dev787@gmail.com" +
         "?subject=" +
         encodeURIComponent(subject) +
         "&body=" +
